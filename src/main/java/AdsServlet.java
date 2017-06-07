@@ -9,21 +9,19 @@ import java.util.List;
 /**
  * Created by canidmars on 6/7/17.
  */
-@WebServlet(name = "UserLoginServlet", urlPatterns = "/login")
-public class UserLoginServlet extends HttpServlet {
+@WebServlet(name = "AdsServlet", urlPatterns = "/ads")
+public class AdsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        if (request.getMethod().equalsIgnoreCase("post")) {
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
-            if (username.equals("admin") && password.equals("password")) {
-                response.sendRedirect("/profile.jsp");
-            }
-        }
+
+        List<Ad> ads = DaoFactory.getAdsDao().all();
+        request.setAttribute("ads", ads);
+        request.getRequestDispatcher("/ads.jsp")
+                .forward(request, response);
 
     }
 }

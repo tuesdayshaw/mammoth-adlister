@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: canidmars
@@ -9,9 +10,16 @@
 <jsp:include page="/partials/head.jsp">
     <jsp:param name="title" value="List of Ads" />
 </jsp:include>
-<html>
 
+<html>
 <body>
+
     <jsp:include page="/partials/navbar.jsp" />
+    
+    <c:forEach var="ad" items="${ads}">
+        <h1>${ad.id} ${ad.title}</h1>
+        <p>${ad.description} ${ad.userId}</p>
+    </c:forEach>
+
 </body>
 </html>
