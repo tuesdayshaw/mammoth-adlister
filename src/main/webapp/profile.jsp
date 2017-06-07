@@ -6,11 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="partials/head.jsp"%>
+
+<jsp:include page="partials/head.jsp">
+    <jsp:param name="title" value="Profile" />
+</jsp:include>
+
 <html>
-<head>
-    <title>Profile</title>
-</head>
 <body>
     <h1>Login Successful</h1>
 </body>
