@@ -3,7 +3,8 @@ public class DaoFactory {
 
     public static Ads getAdsDao() {
         if (adsDao == null) {
-            adsDao = new ListAdsDao();
+            System.out.println("Creating mysql ads dao");
+            adsDao = new MySQLAdsDao();
         }
         return adsDao;
     }
