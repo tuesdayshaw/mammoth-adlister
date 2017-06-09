@@ -14,7 +14,6 @@ public class AdsIndexServlet extends HttpServlet {
         try {
             List<Ad> ads = DaoFactory.getAdsDao().all();
             request.setAttribute("ads", ads);
-            System.out.println("ads fetched! # of ads: " + ads.size());
         } catch (SQLException e) {
             e.printStackTrace();
         }
