@@ -11,30 +11,55 @@ import com.mysql.cj.jdbc.Driver;
 
 public class MySQLAdsDao implements Ads{
 
+    private Connection connection;
 
-    @Override
-    public List<Ad> all() throws SQLException {
-
+    public MySQLAdsDao(Config config) throws SQLException {
         //Configuring a connection to mySQL database
 
-        Config config = new Config();
+        config = new Config();
 
-        Connection connection = DriverManager.getConnection(
+        DriverManager.registerDriver(new Driver());
+
+        connection = DriverManager.getConnection(
                 config.getUrl(),
                 config.getUsername(),
                 config.getPassword()
         );
+    }
 
+    @Override
+    public List<Ad> all() throws SQLException {
+        return selectAds(connection);
+    }
 
+    private List<Ad> selectAds(Connection connection) throws SQLException {
+        List<Ad> ads = new ArrayList<>();
 
+        String query = "SELECT * FROM ads";
 
+        Statement stmt = connection.createStatement();
 
+        ResultSet rs = stmt.executeQuery(query);
 
-        return null;
+        while(rs.next()) {
+            int userId = rs.getInt("user_id");
+            String adTitle = rs.getString("title");
+            String adDescription = rs.getString("description");
+            Ad a = new Ad(userId, adTitle, adDescription);
+            ads.add(a);
+        }
+        return ads;
     }
 
     @Override
     public Long insert(Ad ad) {
+        Statement stmt = connection.createStatement();
+
+        String query = "INSERT INTO ads(user_id, title, description) VALUES";
+        query += "(" + user_id + ", '" + title + "', '" + description + "')";
+        System.out.println(query);
+        stmt.execute(query);
+
         return null;
     }
 
