@@ -3,3 +3,4 @@ target/
 .idea/
 
 src/main/java/Config.java
+src/main/java/Config2.java
