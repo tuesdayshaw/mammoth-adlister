@@ -23,11 +23,12 @@ public class Employee {
         this.hire_date = hire_date;
     }
 
-    public Employee(long emp_no, String birth_date, String first_name, String last_name) {
-        this.emp_no = emp_no;
+    public Employee(String birth_date, String first_name, String last_name, String gender, String hire_date) {
         this.birth_date = birth_date;
         this.first_name = first_name;
         this.last_name = last_name;
+        this.gender = gender;
+        this.hire_date = hire_date;
     }
 
     public long getEmp_no() {

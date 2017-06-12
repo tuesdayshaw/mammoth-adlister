@@ -18,7 +18,7 @@ public class MySQLAdsDao implements Ads{
     public MySQLAdsDao(Config config) throws SQLException {
         //Configuring a connection to mySQL database
 
-        config = new Config();
+//        config = new Config();
 
         DriverManager.registerDriver(new Driver());
 

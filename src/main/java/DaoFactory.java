@@ -12,6 +12,15 @@ public class DaoFactory {
         return adsDao;
     }
 
+    private static Users usersDao;
+
+    public static Users getUsersDao() throws SQLException {
+        if (usersDao == null) {
+            usersDao = new MySQLUsersDao(config);
+        }
+        return usersDao;
+    }
+
 
     private static Config2 config2 = new Config2();
     private static Employees employeesDao;

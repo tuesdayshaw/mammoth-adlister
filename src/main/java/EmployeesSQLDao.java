@@ -30,7 +30,7 @@ public class EmployeesSQLDao implements Employees {
         List<Employee> employees = new ArrayList<>();
 
         //setting up our mysql communication query
-        String query = "SELECT * FROM employees";
+        String query = "SELECT * FROM employees LIMIT 100";
         Statement statement = connection.createStatement();
         ResultSet rs = statement.executeQuery(query);
 
@@ -65,7 +65,7 @@ public class EmployeesSQLDao implements Employees {
         Long id = null;
 
         String query = "INSERT INTO employees(birth_date, first_name, last_name, gender, hire_date) VALUES";
-        query += "(" + employee.getBirth_date() + ", '" + employee.getFirst_name() + "', '" + employee.getLast_name() + "', '" + employee.getGender() + "', '" + employee.getHire_date() + "')";
+        query += "('" + employee.getBirth_date() + "', '" + employee.getFirst_name() + "', '" + employee.getLast_name() + "', '" + employee.getGender() + "', '" + employee.getHire_date() + "')";
 
         statement.execute(query, Statement.RETURN_GENERATED_KEYS);
 
