@@ -47,7 +47,8 @@ public class MySQLUsersDao implements Users {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, username);
             ResultSet rs = stmt.executeQuery();
-            return null;
+            rs.next();
+            return extractUser(rs);
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving user with that username.", e);
         }
@@ -60,7 +61,8 @@ public class MySQLUsersDao implements Users {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, email);
             ResultSet rs = stmt.executeQuery();
-            return null;
+            rs.next();
+            return extractUser(rs);
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving user with that username.", e);
         }
