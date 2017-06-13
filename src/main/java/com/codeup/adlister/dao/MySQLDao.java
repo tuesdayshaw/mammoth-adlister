@@ -6,9 +6,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- * Created by canidmars on 6/13/17.
- */
 public class MySQLDao {
 
     private Connection connection;

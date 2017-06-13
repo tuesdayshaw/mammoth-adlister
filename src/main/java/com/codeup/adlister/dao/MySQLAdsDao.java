@@ -7,25 +7,25 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySQLAdsDao extends MySQLDao implements Ads {
+public class MySQLAdsDao implements Ads {
     private Connection connection = null;
+//
+//    public MySQLAdsDao(Config config) {
+//        super(config);
+//    }
 
     public MySQLAdsDao(Config config) {
-        super(config);
+        try {
+            DriverManager.registerDriver(new Driver());
+            connection = DriverManager.getConnection(
+                config.getUrl(),
+                config.getUsername(),
+                config.getPassword()
+            );
+        } catch (SQLException e) {
+            throw new RuntimeException("Error connecting to the database!", e);
+        }
     }
-
-//    public MySQLAdsDao(Config config) {
-//        try {
-//            DriverManager.registerDriver(new Driver());
-//            connection = DriverManager.getConnection(
-//                config.getUrl(),
-//                config.getUsername(),
-//                config.getPassword()
-//            );
-//        } catch (SQLException e) {
-//            throw new RuntimeException("Error connecting to the database!", e);
-//        }
-//    }
 
     @Override
     public List<Ad> all() {

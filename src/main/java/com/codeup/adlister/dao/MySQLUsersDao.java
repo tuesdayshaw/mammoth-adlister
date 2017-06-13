@@ -5,32 +5,30 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by canidmars on 6/12/17.
- */
-public class MySQLUsersDao extends MySQLDao implements Users {
+
+public class MySQLUsersDao implements Users {
+
+//    private Connection connection;
+
+//    public MySQLUsersDao(Config config) {
+//        super(config);
+//    }
 
     private Connection connection;
 
     public MySQLUsersDao(Config config) {
-        super(config);
-    }
 
-//    private Connection connection;
-//
-//    public MySQLUsersDao(Config config) {
-//
-//        try {
-//            DriverManager.registerDriver(new Driver());
-//            connection = DriverManager.getConnection(
-//                    config.getUrl(),
-//                    config.getUsername(),
-//                    config.getPassword()
-//            );
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
+        try {
+            DriverManager.registerDriver(new Driver());
+            connection = DriverManager.getConnection(
+                    config.getUrl(),
+                    config.getUsername(),
+                    config.getPassword()
+            );
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     public List<User> all() throws SQLException {
