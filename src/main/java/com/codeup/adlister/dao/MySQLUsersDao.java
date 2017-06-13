@@ -1,6 +1,4 @@
 package com.codeup.adlister.dao;
-import com.codeup.adlister.*;
-import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 import java.sql.*;
@@ -10,22 +8,33 @@ import java.util.List;
 /**
  * Created by canidmars on 6/12/17.
  */
-public class MySQLUsersDao implements Users {
+public class MySQLUsersDao extends MySQLDao implements Users {
+
     private Connection connection;
 
     public MySQLUsersDao(Config config) {
-
-        try {
-            DriverManager.registerDriver(new Driver());
-            connection = DriverManager.getConnection(
-                    config.getUrl(),
-                    config.getUsername(),
-                    config.getPassword()
-            );
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        super(config);
     }
+
+
+//    private Connection connection;
+//
+//    public MySQLUsersDao(Config config) {
+//
+//        try {
+//            DriverManager.registerDriver(new Driver());
+//            connection = DriverManager.getConnection(
+//                    config.getUrl(),
+//                    config.getUsername(),
+//                    config.getPassword()
+//            );
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
+
+
 
     public List<User> all() throws SQLException {
 

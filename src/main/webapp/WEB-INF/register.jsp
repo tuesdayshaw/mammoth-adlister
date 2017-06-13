@@ -28,7 +28,7 @@
         </div>
         <div class="form-group">
             <label for="password" >Password:</label>
-            <textarea id="password" name="password" class="form-control" type="text"></textarea>
+            <textarea id="password" name="password" class="form-control" type="password"></textarea>
         </div>
         <input type="submit" class="btn btn-block btn-primary">
     </form>

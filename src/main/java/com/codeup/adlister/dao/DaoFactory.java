@@ -1,7 +1,4 @@
 package com.codeup.adlister.dao;
-import com.codeup.adlister.*;
-
-import java.sql.SQLException;
 
 public class DaoFactory {
     private static Ads adsDao;

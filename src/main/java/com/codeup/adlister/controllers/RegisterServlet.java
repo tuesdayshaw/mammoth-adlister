@@ -21,13 +21,18 @@ public class RegisterServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        User user = new User(
-//                1, // for now we'll hardcode the user id
-                request.getParameter("username"),
-                request.getParameter("email"),
-                request.getParameter("password")
-        );
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        String username = request.getParameter("username");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+
+        if (username.trim().isEmpty() || email.trim().isEmpty() || password.trim().isEmpty()) {
+            request.setAttribute("error", "All fields are required");
+            request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
+            return;
+        }
+
+        User user = new User(username, email, password);
 
         long id = DaoFactory.getUsersDao().insert(user);
         request.getSession().setAttribute("user", user);

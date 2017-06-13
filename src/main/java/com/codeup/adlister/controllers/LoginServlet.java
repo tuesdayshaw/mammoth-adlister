@@ -1,8 +1,5 @@
 package com.codeup.adlister.controllers;
 import com.codeup.adlister.dao.DaoFactory;
-import com.codeup.adlister.dao.MySQLUsersDao;
-import com.codeup.adlister.Config;
-import com.codeup.adlister.dao.Users;
 import com.codeup.adlister.models.User;
 
 import javax.servlet.ServletException;
@@ -11,8 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.Objects;
 
 
 @WebServlet(name = "controllers.LoginServlet", urlPatterns = "/login")
