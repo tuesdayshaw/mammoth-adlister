@@ -30,6 +30,7 @@ public class RegisterServlet extends HttpServlet {
         );
 
         long id = DaoFactory.getUsersDao().insert(user);
+        request.getSession().setAttribute("user", user);
         System.out.println(id);
         response.sendRedirect("/profile");
 
