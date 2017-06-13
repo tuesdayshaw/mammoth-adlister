@@ -27,6 +27,7 @@ public class LoginServlet extends HttpServlet {
         User user = DaoFactory.getUsersDao().findByUsername(username);
 
         if (user == null) {
+            request.setAttribute("error", "Username or password are incorrect");
             response.sendRedirect("/login");
             return;
         }

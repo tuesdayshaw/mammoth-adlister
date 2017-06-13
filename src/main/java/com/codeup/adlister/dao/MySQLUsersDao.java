@@ -16,7 +16,6 @@ public class MySQLUsersDao extends MySQLDao implements Users {
         super(config);
     }
 
-
 //    private Connection connection;
 //
 //    public MySQLUsersDao(Config config) {
@@ -32,8 +31,6 @@ public class MySQLUsersDao extends MySQLDao implements Users {
 //            e.printStackTrace();
 //        }
 //    }
-
-
 
 
     public List<User> all() throws SQLException {
