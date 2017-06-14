@@ -85,7 +85,7 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public List<Ad> findBySearch(String searchString) {
-        String query = "SELECT * FROM ads WHERE title LIKE ?";
+        String query = "SELECT * FROM ads WHERE (title LIKE ?) OR (description LIKE ?) OR (category LIKE ?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, "%" + searchString + "%");
