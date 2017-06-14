@@ -1,22 +1,20 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Viewing All The Ads" />
+        <jsp:param name="title" value="Searching Ads" />
     </jsp:include>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-
 <div class="container">
-    <h1>Here are all the current listings!</h1>
-    <form action="/ads" method="post">
-    <div class="form-inline">
-        <label for="search"></label>
-        <input id="search" name="search" class="form-control" type="text">
-        <input type="submit" value="Search" id="submit">
-    </div>
+    <h1>Here are your search results!</h1>
+    <form action="/ads/search" method="post">
+        <div class="form-inline">
+            <label for="search"></label>
+            <input id="search" name="search" class="form-control" type="text">
+            <input type="submit" value="Search" id="submit">
+        </div>
     </form>
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
@@ -27,6 +25,7 @@
         </div>
     </c:forEach>
 </div>
+
 
 </body>
 </html>
