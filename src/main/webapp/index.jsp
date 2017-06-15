@@ -8,7 +8,7 @@
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div class="container">
+    <div id="welcome" class="container">
         <h1>Welcome to the Artlister!</h1>
     </div>
 </body>
