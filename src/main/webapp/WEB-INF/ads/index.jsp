@@ -11,13 +11,7 @@
 
 <div class="container">
     <h1>Here are all the current listings!</h1>
-    <form action="/ads" method="post">
-    <div class="form-inline">
-        <label for="search"></label>
-        <input id="search" name="search" class="form-control" type="text">
-        <input type="submit" value="Search" id="submit">
-    </div>
-    </form>
+
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
             <img src="">

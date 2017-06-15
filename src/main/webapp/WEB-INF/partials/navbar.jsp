@@ -6,6 +6,13 @@
             <a class="navbar-brand" href="/ads">Artlister</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
+            <form action="/ads" method="post">
+                <div class="form-inline">
+                    <label for="search"></label>
+                    <input id="search" name="search" class="form-control" type="text">
+                    <input type="submit" value="Search" id="submit">
+                </div>
+            </form>
             <c:if test="${!sessionScope.isLoggedIn}">
                 <li><a href="/ads">Listings</a></li>
                 <li><a href="/login">Login</a></li>
