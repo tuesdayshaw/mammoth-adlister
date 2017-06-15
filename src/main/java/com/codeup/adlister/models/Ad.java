@@ -22,6 +22,10 @@ public class Ad {
         this.category = category;
     }
 
+    public Ad() {
+
+    }
+
     public long getId() {
         return id;
     }
