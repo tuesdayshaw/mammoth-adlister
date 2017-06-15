@@ -20,7 +20,7 @@
             </div>
             <div class="form-group">
                 <label for="category">Categories</label>
-                <textarea id="category" name="category" class="form-control" type="text">${ad.categories}</textarea>
+                <textarea id="category" name="category" class="form-control" type="text">${ad.category}</textarea>
             </div>
             <input type="submit" class="btn btn-block btn-primary">
         </form>
