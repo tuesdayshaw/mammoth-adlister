@@ -89,6 +89,8 @@ public class MySQLAdsDao implements Ads {
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, "%" + searchString + "%");
+            stmt.setString(2, "%" + searchString + "%");
+            stmt.setString(3, "%" + searchString + "%");
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
