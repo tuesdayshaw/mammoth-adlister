@@ -10,7 +10,7 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
-    <div class="container">
+    <div id="adDescription" class="container">
         <h1><c:out value="${ad.title}" /></h1>
         <p><c:out value="${ad.description}"/></p>
     </div>

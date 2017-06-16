@@ -46,16 +46,36 @@ body {
 
 }
 
+a {
+    color: black;
+    font-size: 1.5em;
+}
+
 #currentAd{
-    margin-left: 50em;
+    /*margin-left: 50em;*/
+    color: black;
+    text-align: center;
 
 }
 
-#register {
-    margin-left: 30em;
-    font-family: Serif;
-    font-size: 5em;
+#adDescription {
+    color: black;
+    text-align: center;
+}
 
+#register {
+    font-family: Serif;
+    font-size: xx-large;
+    margin-left: 15em;
+    position: absolute;
+    text-align: center;
+
+}
+
+#submitBtn {
+    font-family: Serif;
+    margin-left: 25em;
+    font-size: large;
 }
 
 #logIn {
