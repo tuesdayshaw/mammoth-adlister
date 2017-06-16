@@ -11,6 +11,20 @@ body {
     line-height: 1;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.center-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
 #welcome {
     font-family: serif;
     color: black;
@@ -139,5 +153,5 @@ a {
  }
 
  #backDrop {
-     background-color: rgba (0, 0, 0, .25);
+     background-color: rgba(0, 0, 0, .25);
  }

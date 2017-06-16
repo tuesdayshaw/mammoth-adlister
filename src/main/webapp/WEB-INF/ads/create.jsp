@@ -22,7 +22,7 @@
                 <label for="category">Categories</label>
                 <textarea id="category" name="category" class="form-control" type="text">${ad.category}</textarea>
             </div>
-            <input type="submit" class="btn btn-block btn-primary">
+            <input type="submit" class="button">
         </form>
     </div>
 </body>

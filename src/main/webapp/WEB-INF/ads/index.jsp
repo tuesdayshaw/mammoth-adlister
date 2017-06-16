@@ -11,7 +11,6 @@
 
 <div id="currentAd" class="container">
     <h1 id="mainTxt">Here are all the current listings!</h1>
-
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
             <img src="">
