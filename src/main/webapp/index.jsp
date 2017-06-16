@@ -8,8 +8,12 @@
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div class="container">
-        <h1>Welcome to the Adlister!</h1>
+    <div id="welcome" class="container">
+        <div class="center-content">
+            <h1>Welcome to ListSpot!</h1>
+            <p>Your spot for listing classifieds to the online community!</p>
+            <p><a href="/login">Login</a>or<a href="/register">Register</a></p>
+        </div>
     </div>
 </body>
 </html>

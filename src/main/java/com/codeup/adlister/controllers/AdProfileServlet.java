@@ -2,32 +2,34 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.User;
+import com.codeup.adlister.util.Password;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
 
-@WebServlet(name = "controllers.AdsIndexServlet", urlPatterns = "/ads")
-public class AdsIndexServlet extends HttpServlet {
+/**
+ * Created by canidmars on 6/14/17.
+ */
+
+@WebServlet(name = "controllers.AdProfileServlet", urlPatterns = "/ads/profile")
+public class AdProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.setAttribute("ads", DaoFactory.getAdsDao().all());
+        long id = Long.parseLong(request.getParameter("id"));
+        System.out.println(id);
+        Ad ad = DaoFactory.getAdsDao().findById(id);
 
-        request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
+        request.getSession().setAttribute("ad", ad);
+
+        request.getRequestDispatcher("/WEB-INF/ads/profile.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-
-        String search = request.getParameter("search");
-        List<Ad> ads = DaoFactory.getAdsDao().findBySearch(search);
-        request.setAttribute("ads", ads);
-        request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
-
 
     }
 }
