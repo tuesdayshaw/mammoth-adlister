@@ -14,14 +14,14 @@
                 </div>
             </form>
             <c:if test="${!sessionScope.isLoggedIn}">
-                <li><a href="/ads">Listings</a></li>
-                <li><a href="/login">Login</a></li>
+                <li id="welcomeNav"><a href="/ads">Listings</a></li>
+                <li id="welcomeNav"><a href="/login">Login</a></li>
             </c:if>
             <c:if test="${sessionScope.isLoggedIn}">
-                <li><a href="/ads">Listings</a></li>
-                <li><a href="/ads/create">Create Listing</a></li>
-                <li><a href="/profile">Profile</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li id="welcomeNav"><a href="/ads">Listings</a></li>
+                <li id="welcomeNav"><a href="/ads/create">Create Listing</a></li>
+                <li id="welcomeNav"><a href="/profile">Profile</a></li>
+                <li id="welcomeNav"><a href="/logout">Logout</a></li>
             </c:if>
         </ul>
     </div><!-- /.navbar-collapse -->
