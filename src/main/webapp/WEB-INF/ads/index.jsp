@@ -9,16 +9,18 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
-<div id="currentAd" class="container">
-    <h1 id="mainTxt">Here are all the current listings!</h1>
-    <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <img src="">
-            <h2><a href="/ads/profile?id=${ad.id}"><c:out value="${ad.title}"/></a></h2>
-            <p><c:out value="${ad.description}"/></p>
-            <p><c:out value="${ad.category}"/></p>
-        </div>
-    </c:forEach>
+<div class="container">
+    <div id="currentAd">
+        <h1 id="mainTxt">Here are all the current listings!</h1>
+        <c:forEach var="ad" items="${ads}">
+            <div class="col-md-6">
+                <img src="">
+                <h2><a href="/ads/profile?id=${ad.id}"><c:out value="${ad.title}"/></a></h2>
+                <p><c:out value="${ad.description}"/></p>
+                <p><c:out value="${ad.category}"/></p>
+            </div>
+        </c:forEach>
+    </div>
 </div>
 
 </body>
