@@ -24,7 +24,7 @@
             </div>
         <form action="/img" method="get">
             <div class="form-group">
-                <input type="Add a photo" class="image">
+                <input type="submit" class="image">
             </div>
         </form>
             <input type="submit" class="">
