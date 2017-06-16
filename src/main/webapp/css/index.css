@@ -2,7 +2,9 @@
 
 
 body {
-    background-image: url("/img/WhiteBrick.jpg");
+    background-image: url("/img/GlossyBrick.jpg");
+    background-size: cover;
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
     font-size: 100%;
@@ -31,6 +33,9 @@ body {
 #welcomeNav {
     font-family: Serif;
     margin-left: 100em;
+    text-decoration: none;
+    list-style: none;
+    color: black;
 
 }
 
@@ -50,16 +55,21 @@ body {
 }
 
 #mainTxt{
-    font-size: x-large;
+    font-size: 3em;
 }
 #createAd {
-
+    font-family: Serif;
+    font-size: xx-large;
+    position: absolute;
+    margin-left: 25em;
 }
 
 a {
     color: black;
     font-size: 1.5em;
     font-family: Serif;
+    text-decoration: none;
+    list-style: none;
 }
 
 #currentAd{
@@ -122,4 +132,12 @@ a {
     text-decoration: solid;
 
 }
+ #results {
+     text-align: center;
+     font-size: 6em;
+     font-family: Serif;
+ }
 
+ #backDrop {
+     background-color: rgba (0, 0, 0, .25);
+ }
