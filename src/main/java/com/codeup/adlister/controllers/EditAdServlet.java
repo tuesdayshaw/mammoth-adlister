@@ -19,49 +19,49 @@ import java.io.IOException;
 public class EditAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//        long id = Long.parseLong(request.getParameter("id"));
-//        System.out.println(id);
-//        Ad ad = DaoFactory.getAdsDao().findById(id);
-//
-//        request.getSession().setAttribute("ad", ad);
+        long id = Long.parseLong(request.getParameter("id"));
+        System.out.println(id);
+        Ad ad = DaoFactory.getAdsDao().findById(id);
+
+        request.setAttribute("ad", ad);
 
         if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/login");
             return;
         }
-        request.setAttribute("ad", new Ad());
+
         request.getRequestDispatcher("/WEB-INF/ads/edit.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
         long id = Long.parseLong(request.getParameter("id"));
-        System.out.println(id);
-        Ad ad = DaoFactory.getAdsDao().findById(id);
-
-        request.getSession().setAttribute("ad", ad);
-
-
-//        User user = (User) request.getSession().getAttribute("user");
-//        Ad ad = new Ad(
-//                user.getId(),
-//                request.getParameter("title"),
-//                request.getParameter("description"),
-//                request.getParameter("category")
-//        );
 
         String title = request.getParameter("title");
         String description = request.getParameter("description");
         String category = request.getParameter("category");
 
+        User user = (User) request.getSession().getAttribute("user");
+
+        Ad updatedAd = new Ad(
+                id,
+                user.getId(),
+                title,
+                description,
+                category
+        );
+
+        request.setAttribute("ad", updatedAd);
+
+
         if (title.isEmpty() || description.isEmpty() || category.isEmpty()) {
-            request.setAttribute("ad", ad);
+            request.setAttribute("ad", updatedAd);
             request.getRequestDispatcher("/WEB-INF/ads/profile.jsp")
                     .forward(request, response);
             return;
         }
 
-        DaoFactory.getAdsDao().edit(ad);
+        DaoFactory.getAdsDao().edit(updatedAd);
         response.sendRedirect("/ads");
     }
 }

@@ -22,6 +22,7 @@
             <label for="category">Categories</label>
             <textarea id="category" name="category" class="form-control" type="text">${ad.category}</textarea>
         </div>
+        <input type="hidden" name="id" value="${ad.id}">
         <input type="submit" class="btn btn-block btn-primary">
     </form>
 </div>
