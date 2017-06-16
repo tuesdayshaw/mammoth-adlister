@@ -22,12 +22,7 @@
                 <label for="category">Categories</label>
                 <textarea id="category" name="category" class="form-control" type="text">${ad.category}</textarea>
             </div>
-        <form action="/img" method="get">
-            <div class="form-group">
-                <input type="submit" class="image">
-            </div>
-        </form>
-            <input type="submit" class="">
+            <input type="submit" class="button">
         </form>
     </div>
 </body>
