@@ -19,29 +19,22 @@ import java.io.IOException;
 public class DeleteAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        long id = Long.parseLong(request.getParameter("id"));
-        System.out.println(id);
-        Ad ad = DaoFactory.getAdsDao().findById(id);
-
-        request.setAttribute("ad", ad);
-
         if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/login");
             return;
         }
 
-        request.getRequestDispatcher("/WEB-INF/ads/profile.jsp").forward(request, response);
+        long id = Long.parseLong(request.getParameter("id"));
+        System.out.println(id);
+        Ad ad = DaoFactory.getAdsDao().findById(id);
+
+
+        DaoFactory.getAdsDao().delete(ad);
+        response.sendRedirect("/profile");
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
-        long id = Long.parseLong(request.getParameter("id"));
-
-        Ad ad = DaoFactory.getAdsDao().findById(id);
-
-        request.setAttribute("ad", ad);
-
-        DaoFactory.getAdsDao().delete(ad);
-        response.sendRedirect("/profile");
     }
 }
