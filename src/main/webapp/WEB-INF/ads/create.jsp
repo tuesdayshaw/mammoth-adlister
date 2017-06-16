@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -8,7 +7,7 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div id="createAd" class="container">
+    <div class="container">
         <h1>Create a new Ad</h1>
         <form action="/ads/create" method="post">
             <div class="form-group">
@@ -21,7 +20,7 @@
             </div>
             <div class="form-group">
                 <label for="category">Categories</label>
-                <textarea id="category" name="category" class="form-control" type="text"><c:out value="${ad.category}" /></textarea>
+                <textarea id="category" name="category" class="form-control" type="text">${ad.category}</textarea>
             </div>
             <input type="submit" class="btn btn-block btn-primary">
         </form>
