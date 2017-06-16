@@ -12,12 +12,10 @@
 
     <div id="adDescription" class="container">
         <h1><c:out value="${ad.title}" /></h1>
-        <p>
-            <c:out value="${ad.description}"/>
-            <c:out value="${ad.category}"/>
-        </p>
-        <h4><a href="/ads/edit?id=${ad.id}">Edit Ad</a></h4>
-        <h4><a href="/ads/delete?id=${ad.id}">Delete Ad</a></h4>
+        <p><c:out value="${ad.description}"/></p>
+        <p><c:out value="${ad.category}"/></p>
+        <h5><a href="/ads/edit?id=${ad.id}">Edit Ad</a></h5>
+        <h5><a href="/ads/delete?id=${ad.id}">Delete Ad</a></h5>
     </div>
 </body>
 </html>
