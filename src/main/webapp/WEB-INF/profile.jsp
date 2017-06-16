@@ -14,7 +14,7 @@
     </div>
     <div>
     <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
+        <div id="profileListings" class="col-md-6">
             <img src="">
             <h2><a href="/ads/profile?id=${ad.id}"><c:out value="${ad.title}"/></a></h2>
             <p><c:out value="${ad.description}"/></p>
