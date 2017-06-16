@@ -4,6 +4,8 @@ import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.User;
 
+import javax.jnlp.FileContents;
+import javax.jnlp.FileOpenService;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -45,4 +47,6 @@ public class CreateAdServlet extends HttpServlet {
         DaoFactory.getAdsDao().insert(ad);
         response.sendRedirect("/ads");
     }
+
+
 }

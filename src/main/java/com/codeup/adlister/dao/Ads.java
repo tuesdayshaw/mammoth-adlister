@@ -16,5 +16,9 @@ public interface Ads {
 
     List<Ad> findBySearch (String searchString);
 
+    void edit (Ad ad);
+
+    void delete (Ad ad);
+
 
 }
