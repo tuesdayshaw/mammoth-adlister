@@ -2,6 +2,7 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.User;
 import com.codeup.adlister.util.Password;
 
 import javax.servlet.ServletException;
@@ -28,9 +29,7 @@ public class AdProfileServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/ads/profile.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
     }
-
 }

@@ -101,13 +101,13 @@ public class MySQLAdsDao implements Ads {
     @Override
     public void edit(Ad ad) {
         try {
-            String insertQuery = "UPDATE ads SET user_id = ?, title = ?, description = ?, category = ? WHERE user_id = ?";
-            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            String editQuery = "UPDATE ads SET user_id = ?, title = ?, description = ?, category = ? WHERE id = ?";
+            PreparedStatement stmt = connection.prepareStatement(editQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getUserId());
             stmt.setString(2, ad.getTitle());
             stmt.setString(3, ad.getDescription());
             stmt.setString(4, ad.getCategory());
-            stmt.setLong(5, ad.getUserId());
+            stmt.setLong(5, ad.getId());
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -116,7 +116,7 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public void delete(Ad ad) {
-
+        String deleteQuery = "DELETE FROM ads WHERE id = " + ad.getId();
     }
 
 
